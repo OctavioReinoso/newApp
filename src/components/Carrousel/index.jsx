@@ -7,10 +7,10 @@ import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 export const SliderImage = () => {
 
     const [ indexImage, setIndexImage] = useState(0); 
-    const ListRef = useRef();
+    const listRef = useRef();
 
     useEffect(() => {
-        const listNode = ListRef.current;
+        const listNode = listRef.current;
         const imgNode = listNode.querySelectorAll("li > img")[indexImage];
         
         if(imgNode){
@@ -24,13 +24,13 @@ export const SliderImage = () => {
         if(direction === 'left'){
             setIndexImage(current => {
                 const leftSlide = indexImage === 0;
-                return leftSlide ? 0 : current - 1  
+                return leftSlide ? data.lenght -1 : current - 1  
             })
-        }else{
-            const rightSlide = indexImage === data.length - 1
-            if(rightSlide){
-                setIndexImage(indexImage + 1)  
-            } 
+        }else if(direction === 'right'){
+            setIndexImage((current) => {
+                const rightSlide = indexImage === data.length - 1;
+                return rightSlide ? 0 : current + 1;
+            }); 
         }
     }
 
@@ -38,14 +38,15 @@ export const SliderImage = () => {
         <MainContainer>
             <div className='sliderContainer'>
                 <div className="leftArrow" onClick={() => scrollToImage('left')} > <KeyboardArrowLeftIcon /> </div>
-                <div className="rightArrow" onClick={() => scrollToImage('rigth')} > <KeyboardArrowRightIcon /> </div>
+                <div className="rightArrow" onClick={() => scrollToImage('right')} > <KeyboardArrowRightIcon /> </div>
+
                 <div className='imageContainer'>
-                    <ul ref={ListRef}>
+                    <ul ref={listRef}>
                         {
                             data.map((item) => {
                                 return<li key={item.id}>
-                                    <img src={item.imgURL} alt={item.imgURL} width={500} height={590}/>
-                                </li>
+                                    <img src={item.imgURL} alt={item.imgURL} width={370} height={440}/>
+                                </li> 
                             })
                         }
                     </ul>
@@ -56,8 +57,8 @@ export const SliderImage = () => {
 }
 
 const MainContainer = styled.div`
-    height: 24rem;
-    width: 50%;
+    height: 70vh;
+    width: 80vw;
     /* width: 700px;
     height: 500px; */
     margin: 4rem auto;
@@ -84,13 +85,13 @@ const MainContainer = styled.div`
     img {
         /* width: 100%;
         height: 100%; */
-        margin-top: 5px;
+        margin-top: 1px;
     }
     
     .leftArrow{
         position: absolute;
         top: 50%;
-        transform: translate(0, -50%);
+        transform: translate(0, -20%);
         left: 15px;
         font-size: 50px;
         font-weight: 700;
@@ -101,9 +102,9 @@ const MainContainer = styled.div`
     .rightArrow{
         position: absolute;
         top: 50%;
-        transform: translate(0, -50%);
+        transform: translate(0, -20%);
         right: 15px;
-        font-size: 50px;
+        font-size: 60px;
         font-weight: 700;
         color: black;
         z-index: 1;
