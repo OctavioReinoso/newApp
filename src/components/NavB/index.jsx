@@ -17,13 +17,13 @@ export const NavBar = () => {
                 <h2>*<span>COMMERCE</span></h2>
             </Link>
             <div className={`Links ${clicked ? 'active' : '' }`}> 
-                <Link  onClick={handleClick} className='navLink'>
+                <Link className='navLink'>
                     <h4>SHOP</h4>
                 </Link>
-                <Link  onClick={handleClick} className='navLink'>
+                <Link className='navLink'>
                     <h4>LOGIN</h4>
                 </Link>
-                <Link  onClick={handleClick} className='navLink'>
+                <Link className='navLink'>
                     <h4>CONTACT</h4>
                 </Link>
                 <Link  onClick={handleClick} className='navLink'>
@@ -44,11 +44,20 @@ export const NavBar = () => {
 
 
 const NavContainer = styled.nav`
-    
+    display: flex;
+    justify-content: space-between;
+    background-color: black;
+    padding: .4rem;
+    align-items: center;
     h2{
         color: white;
         span{
             font-weight: bold;
+        }
+    }
+    h4{
+        &:hover{
+            color: lightblue;
         }
     }
     .navLink{
@@ -57,12 +66,6 @@ const NavContainer = styled.nav`
         display: inline-block;
         padding: 0rem 1rem;
     }
-    display: flex;
-    justify-content: space-between;
-    background-color: black;
-    padding: .4rem;
-    align-items: center;
-    
     
     .Links{
         position: absolute;

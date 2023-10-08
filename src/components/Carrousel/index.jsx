@@ -26,12 +26,18 @@ export const SliderImage = () => {
                 const leftSlide = indexImage === 0;
                 return leftSlide ? data.lenght -1 : current - 1  
             })
-        }else if(direction === 'right'){
-            setIndexImage((current) => {
-                const rightSlide = indexImage === data.length - 1;
-                return rightSlide ? 0 : current + 1;
-            }); 
+        }else {
+            const rightSlide = indexImage === data.lenght - 1;
+            if(!rightSlide){
+                setIndexImage(current => current + 1)
+            }
         }
+        // else if(direction === 'right'){
+            // setIndexImage((current) => {
+            //     const rightSlide = indexImage === data.length - 1;
+            //     return rightSlide ? 0 : current + 1;
+            // }); 
+        // }
     }
 
     return (
@@ -45,7 +51,7 @@ export const SliderImage = () => {
                         {
                             data.map((item) => {
                                 return<li key={item.id}>
-                                    <img src={item.imgURL} alt={item.imgURL} width={370} height={440}/>
+                                    <img src={item.imgURL} alt={item.imgURL} width={370} height={440} />
                                 </li> 
                             })
                         }
@@ -57,8 +63,8 @@ export const SliderImage = () => {
 }
 
 const MainContainer = styled.div`
-    height: 70vh;
-    width: 80vw;
+    height: 64vh;
+    width: 30vw;
     /* width: 700px;
     height: 500px; */
     margin: 4rem auto;
@@ -70,6 +76,7 @@ const MainContainer = styled.div`
     .imageContainer{
         width: 100%;
         height: 100%;
+        margin: 1px 6px 1px 1px;
         border: 2px solid grey;
         border-radius: 20px;
         overflow: hidden;
@@ -85,14 +92,16 @@ const MainContainer = styled.div`
     img {
         /* width: 100%;
         height: 100%; */
-        margin-top: 1px;
+        /* transition: margin-right 2s; */
+        
     }
     
     .leftArrow{
         position: absolute;
         top: 50%;
-        transform: translate(0, -20%);
-        left: 15px;
+        transform: translate(0, -33%);
+        transition: margin-right 4s ease-in-out 1s;
+        left: 25px;
         font-size: 50px;
         font-weight: 700;
         color: black;
@@ -102,9 +111,10 @@ const MainContainer = styled.div`
     .rightArrow{
         position: absolute;
         top: 50%;
-        transform: translate(0, -20%);
-        right: 15px;
-        font-size: 60px;
+        transform: translate(0, -33%);
+        transition: all;
+        right: 25px;
+        font-size: 50px;
         font-weight: 700;
         color: black;
         z-index: 1;
