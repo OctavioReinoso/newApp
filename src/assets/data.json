@@ -1,0 +1,32 @@
+{
+    "productsShop":[ 
+        {
+            "id":1, "categoryProd":"calzado", "title":"Jordan 1 red", "price":35000, "stock":5, "gender":"man", "imgURL": "https://nikearprod.vtexassets.com/arquivos/ids/378364-1000-1000?v=1781470630&width=1000&height=1000&aspect=true"
+        },
+        {
+            "id":2, "categoryProd":"calzado", "title":"Air Force white", "price":32000, "stock":5, "gender":"woman", "imgURL": "https://nikearprod.vtexassets.com/arquivos/ids/408175-1000-1000?v=1781465014&width=1000&height=1000&aspect=true"
+        },
+        {
+            "id":3, "categoryProd":"calzado", "title":"Jordan 3 retro", "price":36000, "stock":5, "gender":"man", "imgURL": "https://nikearprod.vtexassets.com/arquivos/ids/698254-1000-1000?v=1781396566&width=1000&height=1000&aspect=true"
+        },
+        {
+            "id":4, "categoryProd":"", "title":"", "price":"", "stock":"", "gender":"", "imgURL": "https://3.bp.blogspot.com/-2tY0VfSAXlo/WfC_OVu3MgI/AAAAAAABRAI/yudVLjsRyGoa1pzbdWJhgPXtsfBOEMTaACLcBGAs/s1600/mejores-tatuaje-bosque-arboles-09.jpg"
+        },
+        {
+            "id":5, "categoryProd":"", "title":"", "price":"", "stock":"", "gender":"", "imgURL": "https://i.pinimg.com/564x/cb/5f/ba/cb5fba64e336c98a9e5f94e95d0795b7.jpg"
+        },
+        {
+            "id":6, "categoryProd":"", "title":"", "price":"", "stock":"", "gender":"", "imgURL": "https://www.instyle.es/medio/2023/05/17/tatuaje-medio-brazo-hombre_00000000_4512ada3_230517110836_736x736.jpg"
+        },
+        {
+            "id":7, "categoryProd":"", "title":"", "price":"", "stock":"", "gender":"", "imgURL": "https://www.instyle.es/medio/2023/05/17/tatuaje-medio-brazo-hombre_00000000_4512ada3_230517110836_736x736.jpg"
+        },
+        {
+            "id":8, "categoryProd":"", "title":"", "price":"", "stock":"", "gender":"", "imgURL": "https//www.instyle.es/medio/2023/05/17/tatuaje-medio-brazo-hombre_00000000_4512ada3_230517110836_736x736.jpg"
+        },
+        {
+            "id":9, "categoryProd":"", "title":"", "price":"", "stock":"", "gender":"", "imgURL": "https://www.instyle.es/medio/2023/05/17/tatuaje-medio-brazo-hombre_00000000_4512ada3_230517110836_736x736.jpg"
+        }
+    ]
+}
+

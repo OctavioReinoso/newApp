@@ -8,7 +8,7 @@ import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
 import SwipeableViews from 'react-swipeable-views';
 import { autoPlay } from 'react-swipeable-views-utils';
 import styled from 'styled-components';
-import { getCatalogue } from '../../assets/data';
+import { fetchProducts } from '../../sdk/products';
 //install react-swipeable views
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
@@ -19,7 +19,7 @@ export const CarrouselItems = () => {
 
     const theme = useTheme();
     const [activeStep, setActiveStep] = React.useState(0);
-    const maxSteps = getCatalogue.length;
+    const maxSteps = fetchProducts.length;
 
     const handleNext = () => {
         setActiveStep((prevActiveStep) => prevActiveStep + 1);
@@ -34,7 +34,7 @@ export const CarrouselItems = () => {
     }
 
     useEffect(() => {
-        getCatalogue()
+        fetchProducts()
         .then((res) => {
             setItems(res)
         })
@@ -61,7 +61,7 @@ export const CarrouselItems = () => {
                         maxWidth: 435,
                         overflow: 'hidden',
                         width: '100vw'}}
-                        src={step.imgURL} alt={step.title}
+                        src={step.image} alt={step.title}
                     />
                     ) : null}
                 </div>

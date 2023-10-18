@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
-import { getProducts } from '../../assets/data'
 import { ItemList } from '../ItemListContainer/ItemList'
-import { CarrouselItems } from '../CarrouselItems'
+// import { CarrouselItems } from '../CarrouselItems'
+import { fetchProducts } from '../../sdk/products'
 
 export const Home = () => {
     const [ products, setProducts ] = useState([])
 
     useEffect(() => {
-        getProducts()
+        fetchProducts()
         .then(response => {
             setProducts(response)
         })
@@ -17,7 +17,7 @@ export const Home = () => {
     
     return (
         <MainContainer>  
-            <CarrouselItems />
+            {/* <CarrouselItems /> */}
             
             <ItemList products={products} />
             

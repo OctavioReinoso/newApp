@@ -19,7 +19,7 @@ function App() {
         <Routes>
           <Route exact path={'/'} element={<Home />} />
           <Route exact path={'/item'} element={ <ItemList />} />
-          <Route exact path={'/itemTab'} element={ <TabsMenu />} />
+          <Route exact path={'/itemsTab'} element={ <TabsMenu />} />
         </Routes>
 
       </BrowserRouter>
